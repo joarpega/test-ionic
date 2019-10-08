@@ -7,7 +7,8 @@
 
   <base href="/" />
 
-  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="format-detection" content="telephone=no" />
   <meta name="msapplication-tap-highlight" content="no" />
 
@@ -20,6 +21,27 @@
 
 <body>
   <app-root></app-root>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDB9aAMzKumIskmSaqsR9g4bLnLPcoh3Z8",
+      authDomain: "test-jorge-e31ab.firebaseapp.com",
+      databaseURL: "https://test-jorge-e31ab.firebaseio.com",
+      projectId: "test-jorge-e31ab",
+      storageBucket: "",
+      messagingSenderId: "721633295484",
+      appId: "1:721633295484:web:b841b73c8e53f5f3f49df9"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </body>
 
 </html>

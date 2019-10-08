@@ -1,4 +1,4 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>
       Tab One
@@ -38,4 +38,35 @@
         <ion-label>Theme Your App</ion-label>
       </ion-item>
     </ion-list>
+</ion-content> -->
+<!-- Input with placeholder -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form ngGroup="login">
+    <ion-item>
+      <ion-label position="stacked">
+        Email
+        <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="text" ngControl="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">
+        Password
+        <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input type="password" ngControl="pass"></ion-input>
+    </ion-item>
+
+    <ion-button (click)="send()" color="success">Success</ion-button>
+  </form>
+
 </ion-content>
