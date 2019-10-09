@@ -9,26 +9,53 @@
 
 <ion-content>
 
-  <form onsubmit="processForm(event)">
-    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+    <form #loginForm="ngForm" (ngSubmit)="onRegister()" >
 
-      <ion-item>
-        <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
-        </ion-label>
-        <ion-input required type="text" ></ion-input>
-      </ion-item>
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+    
+          <ion-list-header>
+            <ion-label>
+              Formulario: {{loginForm.valid}}
+            </ion-label>
+          </ion-list-header>
+    
+          <ion-item>
+            <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required
+                name="email"
+                type="email" 
+                pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                [(ngModel)]="usuario.email" 
+            ></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label position="stacked"> Password <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required
+                name="pass"
+                type="password" 
+                [(ngModel)]="usuario.pass"
+            ></ion-input>
+          </ion-item>
 
-      <ion-item>
-        <ion-label position="stacked"> Password <ion-text color="danger">*</ion-text>
-        </ion-label>
-        <ion-input required type="password" ></ion-input>
-      </ion-item>
-
-    </ion-list>
-
-    <div class="ion-padding">
-      <ion-button expand="block" type="submit" class="ion-no-margin">Login</ion-button>
-    </div>
-  </form>
+          <ion-item>
+              <ion-label position="stacked"> Confirm Password <ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-input required
+                  name="conf_pass"
+                  type="password" 
+                [(ngModel)]="usuario.conf_pass"
+              ></ion-input>
+            </ion-item>
+    
+        </ion-list>
+    
+        <div class="ion-padding">
+          <ion-button expand="block" type="submit" [disabled]="!loginForm.valid" class="ion-no-margin">Confirm Register</ion-button>
+        </div>
+        
+      </form>
 
 </ion-content>

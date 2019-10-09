@@ -18,6 +18,7 @@ export class LoginPage implements OnInit {
 
   onLogin() {
     console.log('Form submit');
+    console.log(this.usuario);
   }
 
 }
