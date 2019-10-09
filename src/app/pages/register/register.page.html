@@ -3,19 +3,19 @@
     <ion-buttons slot="start">
       <ion-back-button text="Back" defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>register</ion-title>
+    <ion-title>Register</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
-    <form #loginForm="ngForm" (ngSubmit)="onRegister()" >
+    <form #registerForm="ngForm" (ngSubmit)="onRegister()" >
 
         <ion-list lines="full" class="ion-no-margin ion-no-padding">
     
           <ion-list-header>
             <ion-label>
-              Formulario: {{loginForm.valid}}
+              Formulario: {{registerForm.valid}}
             </ion-label>
           </ion-list-header>
     
@@ -53,7 +53,7 @@
         </ion-list>
     
         <div class="ion-padding">
-          <ion-button expand="block" type="submit" [disabled]="!loginForm.valid" class="ion-no-margin">Confirm Register</ion-button>
+          <ion-button expand="block" type="submit" [disabled]="!registerForm.valid" class="ion-no-margin">Confirm Register</ion-button>
         </div>
         
       </form>

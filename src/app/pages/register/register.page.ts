@@ -27,7 +27,8 @@ export class RegisterPage implements OnInit {
     console.log(this.usuario);
     console.log(firebase);
     firebase.auth().createUserWithEmailAndPassword(this.usuario.email, this.usuario.pass)
-    .then(console.log);
+    .then(console.log)
+    .catch(console.error);
   }
 
 }
