@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 declare var firebase: any;
 
@@ -17,7 +18,7 @@ export class RegisterPage implements OnInit {
   };
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -27,8 +28,12 @@ export class RegisterPage implements OnInit {
     console.log(this.usuario);
     console.log(firebase);
     firebase.auth().createUserWithEmailAndPassword(this.usuario.email, this.usuario.pass)
-    .then(console.log)
-    .catch(console.error);
+      .then(resp => {
+        if (resp) {
+          this.router.navigate(['/login']);
+        }
+      })
+      .catch(console.error);
   }
 
 }

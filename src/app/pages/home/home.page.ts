@@ -29,9 +29,9 @@ export class HomePage implements OnInit {
   }
 
   singOut() {
-    console.log('SingOut');
+    console.log('SingOut', firebase);
     clearInterval(this.intervalRef);
-    firebase.auth().singOut();
+    firebase.auth();
   }
 
 }
