@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form #loginForm="ngForm" (ngSubmit)="onLogin()" >
+
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+
+      <ion-list-header>
+        <ion-label>
+          Formulario: {{loginForm.valid}}
+        </ion-label>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required
+            name="email"
+            type="email" 
+            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+            [(ngModel)]="usuario.email" 
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked"> Password <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required
+            name="pass"
+            type="password" 
+            [(ngModel)]="usuario.pass"
+        ></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" [disabled]="!loginForm.valid" class="ion-no-margin">Login</ion-button>
+    </div>
+    
+  </form>
+  
+
+    <ion-tabs>
+    
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button routerLink="/register">
+          <ion-icon name="apps"></ion-icon>
+          <ion-label>Register</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    
+    </ion-tabs>
+</ion-content>
